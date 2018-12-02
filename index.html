@@ -1,112 +1,55 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Word Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
+  <script src="assets/javascript/game.js"></script>
+
+
+  <title>Document</title>
 </head>
 
 <body>
+  <div class="container">
 
-  <div id="game">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="display-2 text-center">Word Game</h1>
+        <hr class="my-4">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Word To Guess:</h5>
+              <h5 class="card-text" id="word-to-guess"></h5>
+            </div>
+          </div>
+        </div> 
+          
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body" id="wrong-letters">
+            <h5 class="card-title">Incorrect Guesses</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
   </div>
 
-  <script type="text/javascript">
-
-  // declare array of word answers and add values 
-  var wordBank = ["montreal", "toronto", "winnipeg", "edmonton", "vancouver", "calgary", "ottawa"];
-
-  var answerChoice = Math.floor(Math.random() * wordBank.length);
-    
-  var wordToGuess = wordBank[answerChoice];
-
-  var wordArray = wordToGuess.split("");
   
-
-  console.log(wordToGuess);
-  console.log(wordArray);
-
-  // declare variables
-  var guesses = [];
-  var guessCount = 8;
-  var userGuess;
-  var correctLetter;
-
-  
-  
-
-  document.onkeyup = function(event) {
-
-  //   Determines which key was pressed.
-    userGuess = event.key;
-    console.log("guess: " + userGuess);
-
-    if (guesses.indexOf(userGuess) !== -1) {
-      break;
-    }
-
-    else {     
-      guesses.push(userGuess);
-      if (guesses.length >= 8) {
-        // the game is over
-      }
-      wordArray.forEach(checkWord);
-    };
-
-  };
-
-  function checkWord(letter, index) {
-    if (userGuess === letter) {
-      
-      // print correctly guessed letter to screen
-      console.log("index: " + index);
-      document.getElementById("game").innerHTML = wordArray[index];
-      
-      
-    }
-    
-    
-    
-  };
-
-
-    
-     
-
-
-   
-      
-
-
-    
-
-     
-
-    //   var whoWon = userGuess + computerGuess;
-    //   var youWin = 0;
-    //   var youLose = 0;
-    //   var youTie = 0;
-
-    //   console.log(whoWon);
-
-
-    //   if (userGuess === computerGuess) {
-    //     alert("It's a TIE!");
-    //     youTie++;
-    //   }
-    //   else if (whoWon === "rs" || whoWon === "sp" || whoWon === "pr") {
-    //     alert("YOU WIN!");
-    //     youWin++;
-    //   }
-    //    else { alert("YOU LOSE!");
-    //    youLose++;
-
-    //   }
-
-    // };
-  </script>
-
 </body>
 
 </html>
