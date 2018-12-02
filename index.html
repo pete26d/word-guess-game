@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Word Game</title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+  // declare array of word answers and add values 
+  var wordBank = ["montreal", "toronto", "winnipeg", "edmonton", "vancouver", "calgary", "ottawa"];
+
+  var answerChoice = Math.floor(Math.random() * wordBank.length);
+    
+  var wordToGuess = wordBank[answerChoice];
+
+  var wordArray = wordToGuess.split("");
+  
+
+  console.log(wordToGuess);
+  console.log(wordArray);
+
+  // declare variables
+  var guesses = [];
+  var guessCount = 8;
+  var userGuess;
+  var correctLetter;
+
+  
+  
+
+  document.onkeyup = function(event) {
+
+  //   Determines which key was pressed.
+    userGuess = event.key;
+    console.log("guess: " + userGuess);
+
+    if (guesses.indexOf(userGuess) !== -1) {
+      break;
+    }
+
+    else {     
+      guesses.push(userGuess);
+      if (guesses.length >= 8) {
+        // the game is over
+      }
+      wordArray.forEach(checkWord);
+    };
+
+  };
+
+  function checkWord(letter, index) {
+    if (userGuess === letter) {
+      
+      // print correctly guessed letter to screen
+      console.log("index: " + index);
+      document.getElementById("game").innerHTML = wordArray[index];
+      
+      
+    }
+    
+    
+    
+  };
+
+
+    
+     
+
+
+   
+      
+
+
+    
+
+     
+
+    //   var whoWon = userGuess + computerGuess;
+    //   var youWin = 0;
+    //   var youLose = 0;
+    //   var youTie = 0;
+
+    //   console.log(whoWon);
+
+
+    //   if (userGuess === computerGuess) {
+    //     alert("It's a TIE!");
+    //     youTie++;
+    //   }
+    //   else if (whoWon === "rs" || whoWon === "sp" || whoWon === "pr") {
+    //     alert("YOU WIN!");
+    //     youWin++;
+    //   }
+    //    else { alert("YOU LOSE!");
+    //    youLose++;
+
+    //   }
+
+    // };
+  </script>
+
+</body>
+
+</html>
