@@ -1,9 +1,10 @@
 
 // declare variables
-var wrongGuesses = [];
-var guessCount = 8;
+
+
 var userGuess;
-var correctLetter;
+
+
 
 
 var wordGame = {
@@ -11,6 +12,9 @@ var wordGame = {
   wordArray: [],
   answerArray: [],
   guesses: [],
+  winCount: 0,
+  loseCount: 0,
+  guessCountLeft: 8,
 
   wordChooser: function() {
 
@@ -27,6 +31,7 @@ var wordGame = {
 
     // print the array to the word-to-guess div
     this.printGuess();
+    document.getElementById("guesses-left").innerHTML = this.guessCountLeft;
     
   },
 
@@ -46,9 +51,13 @@ var wordGame = {
       return;
     }
     else if (this.wordArray.includes(userGuess)) {
+        this.guesses.push(userGuess);
         this.letterCorrect();
     }
-    else this.letterWrong();
+    else {
+        this.guesses.push(userGuess);
+        this.letterWrong();
+    }
   },
 
   letterCorrect: function() {
@@ -63,9 +72,13 @@ var wordGame = {
   },
 
   letterWrong: function() {
-
+    
+    this.guessCountLeft--;
+    
+    document.getElementById("guesses-left").innerHTML = this.guessCountLeft;
+    document.getElementById("wrong-guess").insertAdjacentText("afterend", userGuess + " ");
   }
- 
+
 };
 
 

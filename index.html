@@ -12,7 +12,7 @@
   <script src="assets/javascript/game.js"></script>
 
 
-  <title>Document</title>
+  <title>Word Game</title>
 </head>
 
 <body>
@@ -28,8 +28,8 @@
     <div class="row">
       <div class="col-sm-6">
           <div class="card">
+            <h5 class="card-header">Word To Guess</h5>
             <div class="card-body">
-              <h5 class="card-title">Word To Guess:</h5>
               <h5 class="card-text" id="word-to-guess"></h5>
             </div>
           </div>
@@ -37,13 +37,24 @@
           
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-body" id="wrong-letters">
-            <h5 class="card-title">Incorrect Guesses</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+          <h5 class="card-header">Incorrect Guesses</h5>
+          <div class="card-body">
+            <h2 class="card-text" id="wrong-guess"></h2> 
           </div>
         </div>
       </div>
     </div>
+
+    <div class="row">
+        <div class="jumbotron col-6">
+            <h5>Number of Guesses Left: <span id="guesses-left"></span></h5>
+        </div>
+        <div class="jumbotron col-6">
+            <h5>Number of WINS: <span id="count-wins"></span></h5>
+            <h5>Number of LOSSES: <span id="count-losses"></span></h5>
+            <!-- <h5>Last Game Result: <span id="game-result"></span></h5> -->
+        </div>
+    </div> 
 
 
 
