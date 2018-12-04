@@ -1,11 +1,6 @@
-
 // declare variables
 
-
 var userGuess;
-
-
-
 
 var wordGame = {
   wordBank: ["montreal", "toronto", "winnipeg", "edmonton", "vancouver", "calgary", "ottawa"],
@@ -16,7 +11,7 @@ var wordGame = {
   loseCount: 0,
   guessCountLeft: 8,
 
-  wordChooser: function() {
+  initGame: function() {
 
     this.guessCountLeft = 8;
     this.clearDisplay();
@@ -110,14 +105,23 @@ var wordGame = {
     if (result === "lose") {
       this.loseCount++;
       document.getElementById("count-losses").innterHTML = this.loseCount;
-      this.wordChooser();
+      this.initGame();
     }
     else if (result === "win") {
+      this.playSound();
       this.winCount++;
       document.getElementById("count-wins").innerHTML = this.winCount;
-      this.wordChooser();
+      this.initGame();
     }
+  },
+
+  playSound: function() {
+    var myAudio = document.createElement("AUDIO");
+    myAudio.src = "assets/sounds/win.mp3";
+    myAudio.play();
   }
+
+  
 
   
 
@@ -126,7 +130,7 @@ var wordGame = {
 
 
 window.onload = function() {
-    wordGame.wordChooser();
+    wordGame.initGame();
 
     document.onkeyup = function(event) {
         

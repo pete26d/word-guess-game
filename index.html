@@ -20,14 +20,14 @@
 
     <div class="row">
       <div class="col-12">
-        <h1 class="display-2 text-center">Word Game</h1>
+        <h2 class="display-4 text-center">Canadian Provincial Capitals Word Game</h2>
         <hr class="my-4">
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-6">
-          <div class="card">
+          <div class="card border-primary mb-3">
             <h5 class="card-header">Word To Guess</h5>
             <div class="card-body">
               <h2 class="card-text" id="word-to-guess"></h2>
@@ -36,7 +36,7 @@
         </div> 
           
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card border-primary mb-3">
           <h5 class="card-header">Incorrect Guesses</h5>
           <div class="card-body">
             <h2 class="card-text" id="wrong-guess"></h2> 
@@ -46,18 +46,28 @@
     </div>
 
     <div class="row">
-        <div class="jumbotron col-6">
-            <h5>Number of Guesses Left: <span id="guesses-left"></span></h5>
+      <div class="col-sm-6">
+          <div class="card border-info mb-3">
+            <h5 class="card-header">Number of Guesses Left</h5>
+            <div class="card-body">
+              <h2 class="card-text" id="guesses-left"></h2>
+            </div>
+          </div>
+        </div> 
+          
+      <div class="col-sm-6">
+        <div class="card border-info mb-3">
+          <h5 class="card-header">Wins and Losses, eh?</h5>
+          <div class="card-body">
+            <h2 class="card-text text-success">Number of Wins</h2>
+            <h2 class="card-text text-success" id="count-wins"></h2>
+            <br> 
+            <h2 class="card-text text-danger">Number of Losses</h2>
+            <h2 class="card=text text-danger" id="count-losses"></h2>
+          </div>
         </div>
-        <div class="jumbotron col-6">
-            <h5>Number of WINS: <span id="count-wins"></span></h5>
-            <h5>Number of LOSSES: <span id="count-losses"></span></h5>
-            <!-- <h5>Last Game Result: <span id="game-result"></span></h5> -->
-        </div>
-    </div> 
-
-
-
+      </div>
+    </div>
   </div>
 
   
